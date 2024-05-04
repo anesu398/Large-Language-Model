@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Model</title>
+</head>
+<body>
+    <h1>Language Model</h1>
+    <form action="/generate" method="post">
+        <label for="seed_text">Enter Seed Text:</label><br>
+        <input type="text" id="seed_text" name="seed_text" value="{{ seed_text|default('') }}"><br><br>
+        <input type="submit" value="Generate Text">
+    </form>
+    {% if generated_text %}
+        <h2>Generated Text:</h2>
+        <p>{{ generated_text }}</p>
+    {% endif %}
+</body>
+</html>
